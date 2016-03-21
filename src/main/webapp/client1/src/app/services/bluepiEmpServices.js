@@ -9,6 +9,13 @@ return {
         $http.post(url, data)
             .success(success)
             .error(error);
+    },
+    createEmployee :function(data, success, error){
+        console.log(data);
+        var url = 'http://localhost:8080/employee/create';
+        $http.post(url, data)
+            .success(success)
+            .error(error);
     }
 };
 }]);
