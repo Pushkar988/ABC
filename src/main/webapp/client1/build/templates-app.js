@@ -328,6 +328,21 @@ angular.module("employee/create/templates/employeeForm.tpl.html", []).run(["$tem
     "                                        </div>\n" +
     "                                    </div>\n" +
     "                                </div>\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <div class=\"col-md-6\">\n" +
+    "                                        <label class=\"control-label\" for=\"designation\">Designation: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <input id=\"designation\" type=\"text\" name=\"designation\" class=\"form-control input-sm\" required ng-model=\"user.designation\" placeholder=\"Designation\">\n" +
+    "                                        <p class=\"red\"></p>\n" +
+    "                                    </div>\n" +
+    "                                    <div class=\"col-md-6\">\n" +
+    "                                        <label class=\"control-label\" for=\"joiningDate\">Joining Date: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"joiningDate\" type=\"text\" class=\"form-control input-sm\" required ng-model=\"user.joiningDate\" name=\"joiningDate\"\n" +
+    "                                                   placeholder=\"Joining Date\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
     "\n" +
     "                                <div class=\"form-group\">\n" +
     "                                    <label class=\"control-label\" for=\"address\">Address:</label>\n" +
