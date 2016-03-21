@@ -1,2 +1,3 @@
 # Created by .ignore support plugin (hsz.mobi)
-/src/main/webapp/client
+/src/main/webapp/client1/vendor
+/src/main/webapp/client1/node_modules
