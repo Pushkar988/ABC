@@ -1,4 +1,4 @@
-angular.module('templates-app', ['about/about.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html']);
+angular.module('templates-app', ['about/about.tpl.html', 'employee/create/templates/employeeForm.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html']);
 
 angular.module("about/about.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("about/about.tpl.html",
@@ -270,6 +270,127 @@ angular.module("about/about.tpl.html", []).run(["$templateCache", function($temp
     "");
 }]);
 
+angular.module("employee/create/templates/employeeForm.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("employee/create/templates/employeeForm.tpl.html",
+    "\n" +
+    "<div class=\"container candidateform-container\">\n" +
+    "    <div class=\"row centered-form\">\n" +
+    "       <br>\n" +
+    "\n" +
+    "        <div class=\"col-md-2\"></div>\n" +
+    "        <div class=\"col-md-8 col-md-offset2\">\n" +
+    "                            <form name=\"employeeForm\" class=\"form\" novalidate>\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <div class=\"col-md-4\">\n" +
+    "                                        <label class=\"control-label\" for=\"firstName\">First name: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"firstName\" type=\"text\" class=\"form-control input-sm\" required ng-model=\"user.firstName\" name=\"firstName\"\n" +
+    "                                                   placeholder=\"First name\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                    <div class=\"col-md-4 middle-name\">\n" +
+    "                                        <label class=\"control-label\" for=\"middleName\">Middle Name:</label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "\n" +
+    "                                            <input id=\"middleName\" type=\"text\" class=\"form-control input-sm\"  ng-model=\"user.middleName\" name=\"middleName\"\n" +
+    "\n" +
+    "                                                   placeholder=\"Middle name\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "\n" +
+    "                                    <div class=\"col-md-4\">\n" +
+    "                                        <label class=\"control-label\" for=\"lastName\">Last Name: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"lastName\" type=\"text\" class=\"form-control input-sm\" required ng-model=\"user.lastName\" name=\"lastName\"\n" +
+    "                                                   placeholder=\"Last name\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <div class=\"col-md-6\">\n" +
+    "                                        <label class=\"control-label\" for=\"email\">Email: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <input id=\"email\" type=\"text\" class=\"form-control input-sm\"\n" +
+    "                                               name=\"email\"\n" +
+    "                                               required ng-model=\"user.email\" placeholder=\"Email\">\n" +
+    "\n" +
+    "                                        <p class=\"red\"></p>\n" +
+    "                                    </div>\n" +
+    "                                    <div class=\"col-md-6\">\n" +
+    "                                        <label class=\"control-label\" for=\"empCode\">Employee Code: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"empCode\" type=\"text\" class=\"form-control input-sm\" required ng-model=\"user.empCode\" name=\"empCode\"\n" +
+    "                                                   placeholder=\"Employee Code\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "\n" +
+    "                                <div class=\"form-group\">\n" +
+    "                                    <label class=\"control-label\" for=\"address\">Address:</label>\n" +
+    "                                    <input id=\"address\" type=\"text\" class=\"form-control input-sm\"\n" +
+    "                                           name=\"address\"\n" +
+    "\n" +
+    "                                           ng-model=\"user.address\" placeholder=\"Address\">\n" +
+    "\n" +
+    "                                    <p class=\"red\"></p>\n" +
+    "                                </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <div class=\"col-md-4\">\n" +
+    "                                        <label class=\"control-label\" for=\"postalCode\">Postal Code:</label>\n" +
+    "                                        <div class=\"form-group\" >\n" +
+    "\n" +
+    "                                            <input id=\"postalCode\" type=\"text\" class=\"form-control input-sm\"\n" +
+    "                                                   name=\"postalCode\"\n" +
+    "                                                   ng-model=\"user.postalCode\"\n" +
+    "                                                   placeholder=\"Postal Code\"><span class=\"hint\"></span>\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                    <div class=\"col-md-4\">\n" +
+    "                                        <label class=\"control-label\" for=\"mobilNumber\">Mobile Number:</label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"mobilNumber\" type=\"text\" class=\"form-control input-sm\"\n" +
+    "                                                   name=\"mobileNo\"\n" +
+    "                                                   ng-model=\"user.mobileNumber\"\n" +
+    "                                                   placeholder=\"Mobile Number\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "                                    <div class=\"col-md-4\">\n" +
+    "                                        <label class=\"control-label\" for=\"homeNumber\">Phone Number:</label>\n" +
+    "                                        <div class=\"form-group\">\n" +
+    "                                            <input id=\"homeNumber\" type=\"text\" class=\"form-control input-sm\"\n" +
+    "                                                   name=\"homeNo\"\n" +
+    "                                                   ng-model=\"user.homeNumber\"\n" +
+    "                                                   placeholder=\"Phone Number\">\n" +
+    "                                            <p class=\"red\"></p>\n" +
+    "                                        </div>\n" +
+    "                                    </div>\n" +
+    "\n" +
+    "                                </div>\n" +
+    "                                 <br>\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <div class=\"col-md-4\"></div>\n" +
+    "                                    <div class=\"col-md-4 col-md-offset-4\">\n" +
+    "                                        <button class=\"btn btn-primary\" type=\"submit\" style=\"width:49%;\" ng-click=\"createEmployee()\" >Submit</button>\n" +
+    "                                        <button class=\"btn btn-danger\"  type=\"button\" ng-click=\"resetAll()\" style=\"width:48%;\">Reset</button>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <br><br>\n" +
+    "                            </form>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "");
+}]);
+
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
     "<div class=\"jumbotron\">\n" +
@@ -358,7 +479,7 @@ angular.module("login/login.tpl.html", []).run(["$templateCache", function($temp
     "                    <div class=\"row\">\n" +
     "                        <div class=\"col-md-12 login-box-left\">\n" +
     "                            <form  ng-submit=\"login()\" name=\"loginForm\" novalidate>\n" +
-    "                                <div class=\"alert alert-danger\" >{{errorMessage}}</div>\n" +
+    "\n" +
     "                                <div class=\"form-group\">\n" +
     "                                    <input  class=\"form-control input-sm\" ng-model=\"credentials.email\"  name=\"email\"\n" +
     "                                            required>\n" +

@@ -5,7 +5,8 @@ angular.module( 'myApp', [
   'myApp.about',
   'ui.router',
   'myApp.login',
-  'myApp.BluePiEmployeeServices'
+  'myApp.BluePiEmployeeServices',
+  'myApp.employeeForm'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
@@ -19,7 +20,7 @@ angular.module( 'myApp', [
 
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+      $scope.pageTitle = toState.data.pageTitle + ' | BluePi Performance Appraisal' ;
 
 
 

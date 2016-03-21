@@ -30,6 +30,7 @@
     <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="src/app/about/about.js"></script>
     <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/employee/create/employeeForm.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
     <script type="text/javascript" src="src/app/login/AuthService.js"></script>
     <script type="text/javascript" src="src/app/login/login.js"></script>
@@ -54,6 +55,12 @@
               <a href ui-sref="login">
                 <i class="fa fa-info-circle"></i>
                 Login
+              </a>
+            </li>
+            <li ui-sref-active="active">
+              <a href ui-sref="employeeCreate">
+                <i class="fa fa-info-circle"></i>
+                Create Employee
               </a>
             </li>
 

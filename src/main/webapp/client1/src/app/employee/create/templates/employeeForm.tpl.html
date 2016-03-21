@@ -1,0 +1,116 @@
+
+<div class="container candidateform-container">
+    <div class="row centered-form">
+       <br>
+
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-md-offset2">
+                            <form name="employeeForm" class="form" novalidate>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="firstName">First name: <span class="asteriskSize red">*</span></label>
+                                        <div class="form-group">
+                                            <input id="firstName" type="text" class="form-control input-sm" required ng-model="user.firstName" name="firstName"
+                                                   placeholder="First name">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 middle-name">
+                                        <label class="control-label" for="middleName">Middle Name:</label>
+                                        <div class="form-group">
+
+                                            <input id="middleName" type="text" class="form-control input-sm"  ng-model="user.middleName" name="middleName"
+
+                                                   placeholder="Middle name">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="lastName">Last Name: <span class="asteriskSize red">*</span></label>
+                                        <div class="form-group">
+                                            <input id="lastName" type="text" class="form-control input-sm" required ng-model="user.lastName" name="lastName"
+                                                   placeholder="Last name">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="email">Email: <span class="asteriskSize red">*</span></label>
+                                        <input id="email" type="text" class="form-control input-sm"
+                                               name="email"
+                                               required ng-model="user.email" placeholder="Email">
+
+                                        <p class="red"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="empCode">Employee Code: <span class="asteriskSize red">*</span></label>
+                                        <div class="form-group">
+                                            <input id="empCode" type="text" class="form-control input-sm" required ng-model="user.empCode" name="empCode"
+                                                   placeholder="Employee Code">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label" for="address">Address:</label>
+                                    <input id="address" type="text" class="form-control input-sm"
+                                           name="address"
+
+                                           ng-model="user.address" placeholder="Address">
+
+                                    <p class="red"></p>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="postalCode">Postal Code:</label>
+                                        <div class="form-group" >
+
+                                            <input id="postalCode" type="text" class="form-control input-sm"
+                                                   name="postalCode"
+                                                   ng-model="user.postalCode"
+                                                   placeholder="Postal Code"><span class="hint"></span>
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="mobilNumber">Mobile Number:</label>
+                                        <div class="form-group">
+                                            <input id="mobilNumber" type="text" class="form-control input-sm"
+                                                   name="mobileNo"
+                                                   ng-model="user.mobileNumber"
+                                                   placeholder="Mobile Number">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label" for="homeNumber">Phone Number:</label>
+                                        <div class="form-group">
+                                            <input id="homeNumber" type="text" class="form-control input-sm"
+                                                   name="homeNo"
+                                                   ng-model="user.homeNumber"
+                                                   placeholder="Phone Number">
+                                            <p class="red"></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                 <br>
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <button class="btn btn-primary" type="submit" style="width:49%;" ng-click="createEmployee()" >Submit</button>
+                                        <button class="btn btn-danger"  type="button" ng-click="resetAll()" style="width:48%;">Reset</button>
+                                    </div>
+                                </div>
+                                <br><br>
+                            </form>
+                </div>
+            </div>
+        </div>
