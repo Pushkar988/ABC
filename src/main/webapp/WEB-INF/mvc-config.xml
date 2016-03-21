@@ -12,7 +12,7 @@
 
    <mvc:annotation-driven></mvc:annotation-driven>
 
-     <mvc:resources mapping="/client/**" location="/client/build/"/>
+     <mvc:resources mapping="/client1/**" location="/client1/build/"/>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
