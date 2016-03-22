@@ -12,7 +12,7 @@ angular.module( 'myApp.about', [
         templateUrl: 'about/about.tpl.html'
       }
     },
-    data:{ pageTitle: 'What is It?' }
+    data:{ pageTitle: 'About' }
   });
 })
 
@@ -23,6 +23,4 @@ angular.module( 'myApp.about', [
     "And another choice for you.",
     "but wait! A third!"
   ];
-})
-
-;
+});
