@@ -14,8 +14,13 @@ public class EmployeeDao {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
+
+            System.out.println("session     "+session.toString());
+
             trns = session.beginTransaction();
+            System.out.println("session 11    ");
             session.save(user);
+            System.out.println("session 22    ");
             session.getTransaction().commit();
         } catch (RuntimeException e) {
             if (trns != null) {

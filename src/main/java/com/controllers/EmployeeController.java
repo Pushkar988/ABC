@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    EmployeeDao obj;
+
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public void createEmp(Employee emp){
-        obj.addUser(emp);
+        EmployeeDao obj=new EmployeeDao();
+         System.out.println("create user");
+         obj.addUser(emp);
     }
 
 }

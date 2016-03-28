@@ -12,10 +12,17 @@ return {
     },
     createEmployee :function(data, success, error){
         console.log(data);
-        var url = 'http://localhost:8080/employee/create';
+        var url = 'http://localhost:8080/CodeBreakers/employee/create';
         $http.post(url, data)
             .success(success)
             .error(error);
+    },
+    getEmployeeById :function(id, success, error){
+            console.log(data);
+            var url = 'http://localhost:8080/CodeBreakers/'+id;
+            $http.get(url)
+                .success(success)
+                .error(error);
     }
 };
 }]);
