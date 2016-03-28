@@ -10,7 +10,7 @@ import com.utils.HibernateUtil;
  * Created by pushkar on 28/3/16.
  */
 public class EmployeeDao {
-    /*public void addUser(Employee user) {
+    public void addUser(Employee user) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -44,5 +44,5 @@ public class EmployeeDao {
             session.close();
         }
         return user;
-    }*/
+    }
 }
