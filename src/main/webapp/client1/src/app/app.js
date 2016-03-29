@@ -16,15 +16,18 @@ angular.module( 'myApp', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope,$rootScope, $location,CommonService) {
 
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | BluePi Performance Appraisal' ;
-
-
-
     }
   });
+  CommonService.getAllDesignation(function(designations){
+        $rootScope.designations=designations;
+  },function(error){
+    console.log(error);
+  });
+
 });
 
