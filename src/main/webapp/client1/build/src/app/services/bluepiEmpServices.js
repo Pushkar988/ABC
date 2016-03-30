@@ -13,7 +13,7 @@ return {
     createEmployee :function(data, success, error){
         console.log(data);
         var url = baseUrl+'/employee/create';
-        $http.post(url, data)
+        $http.post(url, angular.toJson(data))
             .success(success)
             .error(error);
     },

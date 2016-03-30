@@ -1,11 +1,12 @@
 package com.controllers;
 
 import com.dao.EmployeeDao;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.models.Employee;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 /**
  * Created by pushkar on 28/3/16.
@@ -14,12 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-
+    ObjectMapper objectMapper = new ObjectMapper();
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public void createEmp(Employee emp){
+    public @ResponseBody String  createEmp(@RequestBody Employee emp){
         EmployeeDao obj=new EmployeeDao();
-         System.out.println("create user");
-         obj.addUser(emp);
+        Integer employeeID=null;
+        try {
+            employeeID = (Integer) obj.addUser(emp);
+           if(employeeID!=null)
+            return "Successfully created";
+            else
+               return "Employee Not Successfully created";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return e.toString();
+        }
     }
 
 }

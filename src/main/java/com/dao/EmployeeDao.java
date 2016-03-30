@@ -10,12 +10,13 @@ import com.utils.HibernateUtil;
  * Created by pushkar on 28/3/16.
  */
 public class EmployeeDao {
-    public void addUser(Employee user) {
+    public Integer addUser(Employee user) {
         Transaction trns = null;
+        Integer employeeID = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            session.save(user);
+            employeeID = (Integer) session.save(user);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
             if (trns != null) {
@@ -25,15 +26,16 @@ public class EmployeeDao {
         } finally {
             session.flush();
             session.close();
+            return employeeID;
         }
     }
-    public Employee getUserById(int userid) {
+    public Employee getUserById(Integer userid) {
         Employee user = null;
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            String queryString = "from User where id = :id";
+            String queryString = "from Employee where id = :id";
             Query query = session.createQuery(queryString);
             query.setInteger("id", userid);
             user = (Employee) query.uniqueResult();

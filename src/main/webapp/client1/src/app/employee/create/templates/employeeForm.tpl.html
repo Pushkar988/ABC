@@ -57,17 +57,20 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label class="control-label" for="designation">Designation: <span class="asteriskSize red">*</span></label>
-                                        <input id="designation" type="text" name="designation" class="form-control input-sm" required ng-model="user.designation" placeholder="Designation">
-                                        <p class="red"></p>
+                                        <select id="designation" ng-model="user.designation_id">
+                                            <option value="">--Select--</option>
+                                            <option ng-repeat="designation in designations" value="{{designation.id}}">{{designation.name}}</option>
+
+                                        </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!--<div class="col-md-6">
                                         <label class="control-label" for="joiningDate">Joining Date: <span class="asteriskSize red">*</span></label>
                                         <div class="form-group">
                                             <input id="joiningDate" type="text" class="form-control input-sm" required ng-model="user.joiningDate" name="joiningDate"
                                                    placeholder="Joining Date">
                                             <p class="red"></p>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                                 <div class="form-group">
@@ -99,7 +102,7 @@
                                         <div class="form-group">
                                             <input id="mobilNumber" type="text" class="form-control input-sm"
                                                    name="mobileNo"
-                                                   ng-model="user.mobileNumber"
+                                                   ng-model="user.mobileNo"
                                                    placeholder="Mobile Number">
                                             <p class="red"></p>
                                         </div>
@@ -109,7 +112,7 @@
                                         <div class="form-group">
                                             <input id="homeNumber" type="text" class="form-control input-sm"
                                                    name="homeNo"
-                                                   ng-model="user.homeNumber"
+                                                   ng-model="user.phoneNo"
                                                    placeholder="Phone Number">
                                             <p class="red"></p>
                                         </div>

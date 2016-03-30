@@ -1,11 +1,8 @@
 package com.models;
+import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by pushkar on 28/3/16.
@@ -13,34 +10,131 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="employee")
-public class Employee {
+public class Employee implements Serializable {
+    private Designation designation;
+
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
-    @Column(name="firstname")
-    private String firstname;
+    @Column(name="firstName")
+    private String firstName;
 
-    @Column(name="lastname")
-    private String lastname;
+    @Column(name="middleName")
+    private String middleName;
 
-    @Column(name="birth_date")
-    private Date birthDate;
+    @Column(name="lastName")
+    private String lastName;
 
-    @Column(name="cell_phone")
-    private String cellphone;
+    @Column(name="mobileNo")
+    private String mobileNo;
 
-    public Employee() {
+    @Column(name="email")
+    private String email;
 
+    @Column(name="empCode")
+    private String empCode;
+
+    @Column(name="address")
+    private String address;
+
+    @Column(name="postalCode")
+    private String postalCode;
+
+    @Column(name="phoneNo")
+    private String phoneNo;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "designation_id")
+    public Designation getDesignation() {
+        return designation;
     }
 
-    public Employee(String firstname, String lastname, Date birthdate, String phone) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.birthDate = birthdate;
-        this.cellphone = phone;
-
+    public void setDesignation(Designation designation) {
+        this.designation = designation;
     }
 
-    // Getter and Setter methods
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmpCode() {
+        return empCode;
+    }
+
+    public void setEmpCode(String empCode) {
+        this.empCode = empCode;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Employee(){
+
+    }
 }

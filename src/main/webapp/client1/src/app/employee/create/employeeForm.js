@@ -11,15 +11,14 @@ angular.module('myApp.employeeForm', [])
         data:{ pageTitle: 'Create' }
       });
     })
-    .controller('EmployeeFormCtrl', ['$rootScope', '$scope','$anchorScroll','$location','$timeout','CommonService',
-            function (rootScope, scope,anchorScroll, location,$timeout,CommonService) {
+    .controller('EmployeeFormCtrl', ['$rootScope', '$scope','$anchorScroll','$location','$timeout','CommonService',function (rootScope, scope,anchorScroll, location,$timeout,CommonService) {
 
-                scope.createEmployee = function(){
-                    CommonService.createEmployee(scope.user,function(user){
-                            //write logic after success call
-                    },function(error){
-                        console.log('error',error);
-                    });
-                };
+        scope.createEmployee = function(){
+            CommonService.createEmployee(scope.user,function(user){
+                    //write logic after success call
+            },function(error){
+                console.log('error',error);
+            });
+        };
 
     }]);

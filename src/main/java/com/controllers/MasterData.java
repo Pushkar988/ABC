@@ -16,9 +16,7 @@ import java.util.List;
 public class MasterData {
     @RequestMapping(value = "/allDesignation",method = RequestMethod.GET)
     public List<Designation> getDesignation(){
-        System.out.println("=== allDesignation ===");
         List<Designation> designations= MasterDataDao.getAllDesignations();
-        System.out.println("=== allDesignation: "+designations);
         return designations;
     }
 
