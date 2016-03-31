@@ -1,7 +1,6 @@
 package com.models;
-import java.io.Serializable;
-import java.util.Date;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -11,6 +10,9 @@ import javax.persistence.*;
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable {
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "designation_id")
     private Designation designation;
 
     @Id
@@ -44,8 +46,7 @@ public class Employee implements Serializable {
     @Column(name="phoneNo")
     private String phoneNo;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "designation_id")
+
     public Designation getDesignation() {
         return designation;
     }

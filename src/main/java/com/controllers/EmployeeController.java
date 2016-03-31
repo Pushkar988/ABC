@@ -3,10 +3,8 @@ package com.controllers;
 import com.dao.EmployeeDao;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.models.Employee;
-
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 
 /**
  * Created by pushkar on 28/3/16.
