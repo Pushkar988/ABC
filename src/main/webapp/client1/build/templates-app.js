@@ -79,7 +79,7 @@ angular.module("employee/create/templates/employeeForm.tpl.html", []).run(["$tem
     "                                <div class=\"row\">\n" +
     "                                    <div class=\"col-md-6\">\n" +
     "                                        <label class=\"control-label\" for=\"designation\">Designation: <span class=\"asteriskSize red\">*</span></label>\n" +
-    "                                        <select id=\"designation\" ng-model=\"user.designation_id\">\n" +
+    "                                        <select id=\"designation\" ng-model=\"user.designation_id\" ng-change=\"setDesignation(user.designation_id)\">\n" +
     "                                            <option value=\"\">--Select--</option>\n" +
     "                                            <option ng-repeat=\"designation in designations\" value=\"{{designation.id}}\">{{designation.name}}</option>\n" +
     "\n" +

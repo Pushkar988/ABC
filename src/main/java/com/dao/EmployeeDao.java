@@ -47,4 +47,23 @@ public class EmployeeDao {
         }
         return user;
     }
+
+    public Employee findEmpByEmail(String email) {
+        Employee user = null;
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            String queryString = "from Employee where email = :email";
+            Query query = session.createQuery(queryString);
+            query.setString("email", email);
+            user = (Employee) query.uniqueResult();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return user;
+    }
 }
