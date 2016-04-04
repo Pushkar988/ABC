@@ -85,14 +85,16 @@ angular.module("employee/create/templates/employeeForm.tpl.html", []).run(["$tem
     "\n" +
     "                                        </select>\n" +
     "                                    </div>\n" +
-    "                                    <!--<div class=\"col-md-6\">\n" +
-    "                                        <label class=\"control-label\" for=\"joiningDate\">Joining Date: <span class=\"asteriskSize red\">*</span></label>\n" +
-    "                                        <div class=\"form-group\">\n" +
-    "                                            <input id=\"joiningDate\" type=\"text\" class=\"form-control input-sm\" required ng-model=\"user.joiningDate\" name=\"joiningDate\"\n" +
-    "                                                   placeholder=\"Joining Date\">\n" +
-    "                                            <p class=\"red\"></p>\n" +
-    "                                        </div>\n" +
-    "                                    </div>-->\n" +
+    "\n" +
+    "                                    <div class=\"col-md-6\">\n" +
+    "                                        <label class=\"control-label\" for=\"role\">Role: <span class=\"asteriskSize red\">*</span></label>\n" +
+    "                                        <select id=\"role\" ng-model=\"user.role_id\" ng-change=\"setRole(user.role_id)\">\n" +
+    "                                            <option value=\"\">--Select--</option>\n" +
+    "                                            <option ng-repeat=\"role in roles\" value=\"{{role.id}}\">{{role.name}}</option>\n" +
+    "\n" +
+    "                                        </select>\n" +
+    "                                    </div>\n" +
+    "\n" +
     "                                </div>\n" +
     "\n" +
     "                                <div class=\"form-group\">\n" +

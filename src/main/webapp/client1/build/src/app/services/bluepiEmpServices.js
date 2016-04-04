@@ -25,10 +25,23 @@ return {
                 .error(error);
     },
     getAllDesignation :function(success, error){
-            var url = baseUrl+'/allDesignation';
+            var url = baseUrl+'/designations';
             $http.get(url)
                 .success(success)
                 .error(error);
+    },
+    getAllRoles :function(success, error){
+            var url = baseUrl+'/roles';
+            $http.get(url)
+                .success(success)
+                .error(error);
+    },
+    createRoleMap :function(data, success, error){
+        console.log(data);
+        var url = baseUrl+'/roleMap/create';
+        $http.post(url, angular.toJson(data))
+            .success(success)
+            .error(error);
     }
 };
 }]);

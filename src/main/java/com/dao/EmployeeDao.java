@@ -29,7 +29,7 @@ public class EmployeeDao {
             return employeeID;
         }
     }
-    public Employee getUserById(Integer userid) {
+    public Employee findEmpById(Integer userid) {
         Employee user = null;
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();

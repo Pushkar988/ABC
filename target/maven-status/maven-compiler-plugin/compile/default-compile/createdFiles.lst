@@ -1,7 +1,13 @@
 com/utils/HibernateUtil.class
+com/service/RoleMapService.class
+com/controllers/loginController.class
 com/dao/EmployeeDao.class
 com/controllers/EmployeeController.class
+com/controllers/RoleMapController.class
+com/models/RoleMap.class
+com/models/Role.class
 com/models/BlogEntry.class
 com/models/Employee.class
-com/controllers/loginController.class
 com/models/User.class
+com/service/EmployeeService.class
+com/dao/RoleMapDao.class

@@ -63,14 +63,16 @@
 
                                         </select>
                                     </div>
-                                    <!--<div class="col-md-6">
-                                        <label class="control-label" for="joiningDate">Joining Date: <span class="asteriskSize red">*</span></label>
-                                        <div class="form-group">
-                                            <input id="joiningDate" type="text" class="form-control input-sm" required ng-model="user.joiningDate" name="joiningDate"
-                                                   placeholder="Joining Date">
-                                            <p class="red"></p>
-                                        </div>
-                                    </div>-->
+
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="role">Role: <span class="asteriskSize red">*</span></label>
+                                        <select id="role" ng-model="user.role_id" ng-change="setRole(user.role_id)">
+                                            <option value="">--Select--</option>
+                                            <option ng-repeat="role in roles" value="{{role.id}}">{{role.name}}</option>
+
+                                        </select>
+                                    </div>
+
                                 </div>
 
                                 <div class="form-group">

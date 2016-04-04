@@ -13,10 +13,19 @@ angular.module('myApp.employeeForm', [])
     })
     .controller('EmployeeFormCtrl', ['$rootScope', '$scope','$anchorScroll','$location','$timeout','CommonService',function (rootScope, scope,anchorScroll, location,$timeout,CommonService) {
 
+        scope.roleMap={};
         scope.createEmployee = function(){
 
             CommonService.createEmployee(scope.user,function(user){
-                    //write logic after success call
+                    if(user){
+                        scope.roleMap.employee=user;
+                        CommonService.createRoleMap(scope.roleMap, function(roleMap){
+                            alert("User successfully created.");
+                        },function(error){
+                            console.log("roleMap",error);
+                        });
+                    }
+
             },function(error){
                 console.log('error',error);
             });
@@ -31,6 +40,17 @@ angular.module('myApp.employeeForm', [])
 
           delete scope.user.designation_id;
           console.log('user',scope.user);
+        };
+
+        scope.setRole= function(id){
+          scope.roleMap.role = rootScope.roles.find(function(role){
+                if(role.id == id){
+                    return role;
+                }
+          });
+
+            delete scope.user.role_id;
+          console.log('user',scope.user.role);
         };
 
     }]);

@@ -46,6 +46,17 @@ public class Employee implements Serializable {
     @Column(name="phoneNo")
     private String phoneNo;
 
+    @Column(name="password")
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public Designation getDesignation() {
         return designation;

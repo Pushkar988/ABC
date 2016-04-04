@@ -1,6 +1,7 @@
 package com.dao;
 
 import com.models.Designation;
+import com.models.Role;
 import com.utils.HibernateUtil;
 
 import org.hibernate.Session;
@@ -28,6 +29,22 @@ public class MasterDataDao {
             session.close();
         }
         return designations;
+    }
+
+    public static List<Role> getRoles() {
+        List<Role> roles = new ArrayList<Role>();
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            trns = session.beginTransaction();
+            roles = session.createQuery("from Role").list();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return roles;
     }
 
 

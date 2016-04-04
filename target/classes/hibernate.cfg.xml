@@ -16,5 +16,7 @@
 
         <mapping class="com.models.Employee"></mapping>
         <mapping class="com.models.Designation"></mapping>
+        <mapping class="com.models.Role"></mapping>
+        <mapping class="com.models.RoleMap"></mapping>
     </session-factory>
 </hibernate-configuration>

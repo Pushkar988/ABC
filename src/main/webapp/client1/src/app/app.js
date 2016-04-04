@@ -29,5 +29,11 @@ angular.module( 'myApp', [
     console.log(error);
   });
 
+  CommonService.getAllRoles(function(roles){
+          $rootScope.roles=roles;
+    },function(error){
+      console.log(error);
+  });
+
 });
 
